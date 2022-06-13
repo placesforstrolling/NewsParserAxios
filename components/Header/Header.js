@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import {
   StyleSheet,
@@ -12,69 +12,49 @@ import {
   SafeAreaView,
 } from 'react-native';
 
-const Header = () => {
+const Header = ({navigation}) => {
 
     return (
         <View style={styles.header}>
-          <TouchableOpacity style={styles.iconWrapper}>
-              <Text>
-                <Icon name="apps" style={styles.headerIcon}/>
-              </Text>
-            </TouchableOpacity>
-          <View>
-          <View style={styles.location}>
-            <Text>
-              <Icon name="location-on" style={styles.locationIcon}/>
-            </Text>
-            <Text style={styles.locationText}>Ohio, US</Text>
-          </View>
-           
-          </View>
-         
-          <TouchableOpacity style={styles.iconWrapper}>
-            <Text style={styles.headerIcon}>
-              <Icon name="search" style={styles.headerIcon}/>
-            </Text>
+          <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('News')}>
+            <Text style={styles.btnText}>Watch News</Text>
           </TouchableOpacity>
+          <Text style={styles.iconWrapper}>
+            <Icon name='newspaper' style={styles.icon}/>
+          </Text>
         </View>
       
     );
 }
 
 const styles = StyleSheet.create({
-  locationText: {
-    fontWeight: '800',
-    marginLeft: 5
-  },
-  locationIcon: {
-    color: '#85d7cf',
-    fontSize: 18,
-  },
-  location: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    
-  },
-  headerIcon: {
-    color: '#595c63',
-    fontSize: 26,
+  icon: {
+    fontSize: 150,
   },
   iconWrapper: {
-    width: 40,
-    height: 40,
-    borderRadius: 12,
-    backgroundColor: '#ebeef3',
+    position: 'absolute',
+    bottom: 100
+  },
+  btnText: {
+    fontSize: 22,
+    fontWeight: '700',
+    color: '#fff'
+  },
+  btn: {
+    position: 'absolute',
+    top: 200,
+    height: 60,
+    backgroundColor: 'rgb(36,160,237)',
+    paddingLeft: 40,
+    paddingRight: 40,
     justifyContent: 'center',
-    alignItems: 'center'
+    borderRadius: 10,
   },
   header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 20,
-    paddingTop: 10,
-    paddingBottom: 5
-  },
+    backgroundColor: '#eee',
+    flex: 1,
+    alignItems: 'center'
+  }
 });
 
 export default Header;

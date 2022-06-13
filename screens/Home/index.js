@@ -9,14 +9,12 @@ import {
 } from 'react-native';
 
 import Header from "../../components/Header/Header";
-import TripTabs from "../../components/TripTabs/TripTabs";
 
 const Home = ({navigation}) => {
 
     return (
         <SafeAreaView style={styles.body}>
-            <Header/>
-            <TripTabs navigation={navigation}/>
+            <Header navigation={navigation}/>
         </SafeAreaView>
     );
 }
@@ -24,9 +22,7 @@ const Home = ({navigation}) => {
 const styles = StyleSheet.create({
     body: {
         backgroundColor: '#fff',
-        paddingBottom: 0,
         flex: 1,
-        paddingTop: 20
     },
     text: {
         fontFamily: 'Dosis',

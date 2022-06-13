@@ -3,31 +3,23 @@ import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
-import Welcome from './screens/Welcome'
 import Home from './screens/Home';
-import Trip from './screens/Trip';
+import NewsScreen from './screens/NewsScreen';
 
 const HomeStack = createStackNavigator({
-  Welcome: {
-    screen: Welcome,
-    navigationOptions: {
-      headerShown: false,
-    },
-  },
   Home: {
     screen: Home,
     navigationOptions: {
       headerShown: false,
     },
   },
-  Trip: {
-    screen: Trip,
-    navigationOptions: {
-      headerShown: false,
-    },
+  News: {
+    screen: NewsScreen,
+    // navigationOptions: {
+    //   headerShown: false,
+    // },
   },
-
-},{initialRouteName: 'Welcome'})
+})
 
 
 const App = createSwitchNavigator({
