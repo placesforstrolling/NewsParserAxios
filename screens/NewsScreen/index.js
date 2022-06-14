@@ -56,7 +56,7 @@ const NewsScreen = () => {
                         return <NewsCard item={item}/>
                     }}
                     />
-                    {news.articles.length ? null : <Text style={styles.noNews}>No News : (</Text>}
+                    {news.articles ? (news.articles.length ? null : <Text style={styles.noNews}>No News : (</Text>) : null}
 
         </SafeAreaView>
     );
